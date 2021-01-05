@@ -1,5 +1,3 @@
-FROM ubuntu:latest
+FROM alpine:latest
 
-RUN DEBIAN_FRONTEND=noninteractive apt update
-RUN DEBIAN_FRONTEND=noninteractive apt upgrade -y
-RUN DEBIAN_FRONTEND=noninteractive apt install -y spirv-tools glslang-tools libavdevice-dev libavcodec-dev libsdl2-ttf-dev libsdl2-dev pkg-config
+RUN apk add --no-cache bash gcc git sdl2 sdl2-dev sdl2_ttf sdl2_ttf-dev  ffmpeg ffmpeg-dev cmake glm-dev pkgconfig libc-dev make g++
